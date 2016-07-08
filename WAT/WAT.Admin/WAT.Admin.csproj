@@ -204,6 +204,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Data\Configurations\PaxEntityConfiguration.cs" />
+    <Compile Include="Data\Migrations\201607080011236_PaxTable.cs" />
+    <Compile Include="Data\Migrations\201607080011236_PaxTable.Designer.cs">
+      <DependentUpon>201607080011236_PaxTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Migrations\Configuration.cs" />
+    <Compile Include="Data\WATContext.cs" />
+    <Compile Include="Entities\Pax.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -260,6 +268,11 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Data\Migrations\201607080011236_PaxTable.resx">
+      <DependentUpon>201607080011236_PaxTable.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
