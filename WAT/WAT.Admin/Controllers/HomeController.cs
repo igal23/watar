@@ -14,16 +14,17 @@ namespace WAT.Admin.Controllers
         public ActionResult Index()
         {
             ViewBag.Title = "Home Page";
-            Open();
+            ViewBag.Description = Open();
             return View();
         }
 
-        private void Open()
+        private string Open()
         {
             var context = new WATContext();
-            var paxes = context.Paxes.ToList();
-            context.Paxes.Add(new Entities.Pax { FirstName = "Test" });
-            context.SaveChanges();
+            var pax = context.Paxes.FirstOrDefault();
+            return pax != null ? pax.FirstName : "N/A";
+            //context.Paxes.Add(new Entities.Pax { FirstName = "Test" });
+            //context.SaveChanges();
         }
     }
 }
