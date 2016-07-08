@@ -1,0 +1,42 @@
+﻿<div class="container"
+     ng-controller="PaxController as ctrl" ng-init="getPaxes()">
+
+    <div class="row customHeader">
+        <div class="col-md-2">Apellido</div>
+        <div class="col-md-2">Nombre</div>
+        <div class="col-md-2">Email</div>
+        <div class="col-md-2">Teléfono</div>
+        <!--<div class="col-md-1">Nacimiento</div>-->
+        <div class="col-md-2">Ciudad</div>
+        <div class="col-md-1">Universidad</div>
+    </div>
+    <div ng-repeat="pax in paxes">
+        <div class="row customRow">
+            <div class="col-md-2">{{pax.apellido}}</div>
+            <div class="col-md-2">{{pax.nombre}}</div>
+            <div class="col-md-2">{{pax.email}}</div>
+            <div class="col-md-2">{{pax.telefono}}</div>
+            <!--<div class="col-md-1">{{pax.fechaNacimiento | date : 'dd/MM/yy'}}</div>-->
+            <div class="col-md-2">{{pax.ciudad}}</div>
+            <div class="col-md-1">{{pax.universidad}}</div>
+        </div>
+    </div>
+</div>
+<style>
+    .customHeader {
+        font-weight: bold;
+        padding:8px;
+        border-bottom-color:#808080;
+        border-bottom-style:solid;
+        border-bottom-width:0.5px;
+    }
+    .customRow{
+        padding:8px;
+        border-bottom-color:#808080;
+        border-bottom-style:solid;
+        border-bottom-width:0.5px;
+    }
+        .customRow:hover {
+            background-color:#EDF3F5;
+        }
+</style>

@@ -24,12 +24,23 @@
 		        $scope.pax = new Pax();
 		    });
         }
+
+        $scope.getPaxes = function () {
+            $http.get($scope.url + '/GetAll')
+		    .success(function (result) {
+		        $scope.paxes = result.data;
+		    });
+        };
     });
 
     app.config(['$routeProvider', function ($routeProvider) {
         $routeProvider.
             when('/pax', {
                 templateUrl: 'partials/pax.html',
+                controller: 'PaxController'
+            }).
+            when('/paxes', {
+                templateUrl: 'partials/paxList.html',
                 controller: 'PaxController'
             }).
             otherwise({

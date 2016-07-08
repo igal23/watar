@@ -10,7 +10,7 @@ namespace WAT.Admin.Controllers
     public class PaxController : BaseApiController
     {
         [HttpGet]
-        public ResponseData<List<Pax>> GetPaxes()
+        public ResponseData<List<Pax>> GetAll()
         {
             return (Execute(delegate () {
                 List<Pax> paxes = null;
