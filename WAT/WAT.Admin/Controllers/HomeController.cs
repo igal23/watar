@@ -13,18 +13,8 @@ namespace WAT.Admin.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
-            ViewBag.Description = Open();
+            ViewBag.Title = "WATAR";
             return View();
-        }
-
-        private string Open()
-        {
-            var context = new WATContext();
-            var pax = context.Paxes.FirstOrDefault();
-            return pax != null ? pax.FirstName : "N/A";
-            //context.Paxes.Add(new Entities.Pax { FirstName = "Test" });
-            //context.SaveChanges();
         }
     }
 }
