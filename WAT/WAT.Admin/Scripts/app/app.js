@@ -6,6 +6,8 @@
     app.controller('PaxController', function ($scope, $http) {
         //initialize
         this.title = 'Información personal';
+
+        $scope.url = '/api/Pax';
         $scope.registrationSuccess = false;
         $scope.pax = new Pax();
         $scope.ciudades = [new Item(0, 'Otro'),
@@ -14,9 +16,13 @@
         $scope.universidades = [new Item(0, 'Otro'),
             new Item(1, 'UBA'),
             new Item(2, 'UTN')];
-        
+
         $scope.registrar = function () {
-            $scope.registrationSuccess = true;
+            $http.post($scope.url + '/Register', $scope.pax)
+		    .success(function (data) {
+		        $scope.registrationSuccess = true;
+		        $scope.pax = new Pax();
+		    });
         }
     });
 

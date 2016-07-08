@@ -1,5 +1,6 @@
 ﻿function Pax() {
-    this.apelido = '';
+    this.paxId = null;
+    this.apellido = '';
     this.nombre = '';
     this.email = '';
     this.telefono = '';
